@@ -60,7 +60,8 @@ fun what_month (day : int) =
 
 (* ex 10 *)
 fun month_range (day1 : int, day2 : int) =
-	List.tabulate(day2 - day1 + 1, fn x => what_month(day1+x))
+	if (day1 > day2) then []
+	else List.tabulate(day2 - day1 + 1, fn x => what_month(day1+x))
 
 (* ex 11 *)
 fun oldest (dates : (int*int*int) list) =

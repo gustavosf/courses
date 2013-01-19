@@ -50,6 +50,7 @@ what_month(213) = 8;
 month_range(15, 16) = [1,1];
 month_range(31, 32) = [1,2];
 month_range(32, 31) = [];
+month_range(5, 3) = [];
 
 (* tests for ex 11 *)
 oldest(dates) = SOME (2012, 2, 4);
