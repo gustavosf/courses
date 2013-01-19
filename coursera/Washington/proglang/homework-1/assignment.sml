@@ -83,6 +83,14 @@ fun number_in_months_challenge (dates : (int*int*int) list, months : int list) =
 	in
 		number_in_months(dates, remDup(months))
 	end
+fun dates_in_months_challenge (dates : (int*int*int) list, months : int list) =
+	let fun delete A nil = nil 
+	      | delete A (B::R) = if (A=B) then (delete A R) else (B::(delete A R));
+		fun remDup nil = nil
+	      | remDup (A::R) = (A::(remDup (delete A R)));
+	in
+		dates_in_months(dates, remDup(months))
+	end
 
 (* ex 13 *)
 fun reasonable_date (date : int * int * int) =

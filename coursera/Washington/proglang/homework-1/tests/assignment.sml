@@ -59,6 +59,9 @@ oldest(dates) = SOME (2012, 2, 4);
 number_in_months_challenge(dates, [2,2,4]) = 3;
 number_in_months_challenge(dates, [4,6,4]) = 1;
 number_in_months_challenge(dates, [7,8]) = 0;
+dates_in_months_challenge(dates, [2,2,4]) = [(2012, 2, 4), (2012, 2, 5), (2012, 4, 10)];
+dates_in_months_challenge(dates, [4,6,4]) = [(2012, 4, 10)];
+dates_in_months_challenge(dates, [7,8]) = [];
 
 (* tests for ex 13 *)
 reasonable_date((2013, 1, 19)) = true;
