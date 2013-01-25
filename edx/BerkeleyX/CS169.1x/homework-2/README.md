@@ -1,0 +1,1 @@
+I'm maintaining here only files I changed from the [rottenpotatoes original repo](https://github.com/saasbook/hw2_rottenpotatoes)
