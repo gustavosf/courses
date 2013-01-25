@@ -9,10 +9,14 @@ class MoviesController < ApplicationController
   def index
     @sort = params[:sort] || session[:sort] || :id
     @all_ratings = Movie.all_ratings
-    @selected_ratings = params[:ratings] != nil ? params[:ratings].keys : session[:ratings] || @all_ratings
-    @movies = Movie.find_all_by_rating @selected_ratings, :order => @sort
-    session[:sort] = @sort
-    session[:ratings] = @selected_ratings
+    @selected_ratings = params[:ratings] || session[:ratings] || Hash[@all_ratings.map{|x|[x,1]}]
+    @movies = Movie.find_all_by_rating @selected_ratings.keys, :order => @sort
+
+    if params[:sort] != @sort or params[:ratings] != @selected_ratings
+      session[:sort] = @sort
+      session[:ratings] = @selected_ratings
+      redirect_to :sort => @sort, :ratings => @selected_ratings
+    end
   end
 
   def new
