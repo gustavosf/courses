@@ -7,8 +7,12 @@ class MoviesController < ApplicationController
   end
 
   def index
-    @sort = params[:sort] || :id
-    @movies = Movie.find :all, { :order => @sort }
+    @sort = params[:sort] || session[:sort] || :id
+    @all_ratings = Movie.all_ratings
+    @selected_ratings = params[:ratings] != nil ? params[:ratings].keys : session[:ratings] || @all_ratings
+    @movies = Movie.find_all_by_rating @selected_ratings, :order => @sort
+    session[:sort] = @sort
+    session[:ratings] = @selected_ratings
   end
 
   def new
