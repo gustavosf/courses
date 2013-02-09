@@ -10,8 +10,4 @@
 
 # Ignoring hottenpottatoes files that wasn't modified in homework-3
 /edx/BerkeleyX/CS169.1x/homework-3
-!/edx/BerkeleyX/CS169.1x/homework-3/app/controllers/movies_controller.rb
-!/edx/BerkeleyX/CS169.1x/homework-3/app/views/movies/index.html.haml
-!/edx/BerkeleyX/CS169.1x/homework-3/app/assets/stylesheets/application.css
-!/edx/BerkeleyX/CS169.1x/homework-3/app/models/movies.rb
-!/edx/BerkeleyX/CS169.1x/homework-3/README.md
+!/edx/BerkeleyX/CS169.1x/homework-3/fetures
