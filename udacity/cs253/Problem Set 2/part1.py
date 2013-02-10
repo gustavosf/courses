@@ -1,5 +1,6 @@
 import webapp2
 import string
+import cgi
 
 form = """
 <!DOCTYPE html>
@@ -27,7 +28,7 @@ class MainPage(webapp2.RequestHandler):
       "ABCDEFGHIJKLMabcdefghijklmNOPQRSTUVWXYZnopqrstuvwxyz",
       "NOPQRSTUVWXYZnopqrstuvwxyzABCDEFGHIJKLMabcdefghijklm")
     rot13 = string.translate(self.request.get('text').encode('ascii', 'replace'), rot13)
-    self.response.write(form % rot13)
+    self.response.write(form % cgi.escape(rot13))
 
 
 app = webapp2.WSGIApplication([('/', MainPage)], debug=True)
