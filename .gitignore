@@ -12,4 +12,7 @@
 /edx/BerkeleyX/CS169.1x/homework-3
 !/edx/BerkeleyX/CS169.1x/homework-3/fetures
 
+# Ignoring hottenpotatoes files that wasn't modified in homework-4
+/edx/BerkeleyX/CS168.1x/homework-4
+
 *.pyc
