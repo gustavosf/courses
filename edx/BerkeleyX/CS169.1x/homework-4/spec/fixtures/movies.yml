@@ -1,0 +1,26 @@
+star_wars_movie:
+  id: 1
+  title: Star Wars
+  rating: PG
+  director: George Lucas
+  release_date: 1977-05-25
+
+blade_runner_movie:
+  id: 2
+  title: Blade Runner
+  rating: PG
+  director: Ridley Scott
+  release_date: 1982-06-25
+
+alien_movie:
+  id: 3
+  title: Alien
+  rating: R
+  release_date: 1979-05-25
+
+thx_movie:
+  id: 4
+  title: THX-1138
+  rating: R
+  director: George Lucas
+  release_date: 1971-03-11
