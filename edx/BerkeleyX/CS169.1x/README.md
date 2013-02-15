@@ -6,3 +6,4 @@ CS169.1x teaches the fundamentals for engineering long-lasting software using hi
 Students will work individually on weekly coding projects. Those who successfully complete each assignment and earn a passing grade will get an honor code certificate from BerkeleyX.
 
 **Taken from January 7 to February 15, 2013** 
+**Scored 8.8/10**
