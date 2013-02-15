@@ -1,14 +1,13 @@
 class MoviesController < ApplicationController
 
   def similar
-    movie = Movie.find params[:movie]
+    movie = Movie.find params[:id]
     if movie.director.nil? or movie.director == ''
       flash[:notice] = "'#{movie.title}' has no director info"
       redirect_to movies_path and return
     end
     @movies = Movie.similar_to movie
   end
-
 
   def show
     id = params[:id] # retrieve movie ID from URI route
@@ -17,33 +16,19 @@ class MoviesController < ApplicationController
   end
 
   def index
-    sort = params[:sort] || session[:sort]
-    case sort
-    when 'title'
-      ordering,@title_header = {:order => :title}, 'hilite'
-    when 'release_date'
-      ordering,@date_header = {:order => :release_date}, 'hilite'
-    end
     @all_ratings = Movie.all_ratings
-    @selected_ratings = params[:ratings] || session[:ratings] || {}
+    params[:ratings] = params[:ratings].keys if params[:ratings].is_a?(Hash)
+    @ratings = params[:ratings] ? params[:ratings] : (session[:ratings].nil? ? @all_ratings : session[:ratings])
+    @order = params[:order] ? params[:order] : (session[:order].nil? ? 'title' : session[:order])
+    @movies = Movie.find_all_by_rating @ratings, :order => @order
 
-    if @selected_ratings == {}
-      @selected_ratings = Hash[@all_ratings.map {|rating| [rating, rating]}]
-    end
-
-    if params[:sort] != session[:sort]
-      session[:sort] = sort
+    if params['ratings'] != @ratings || params[:order] != @order
       flash.keep
-      redirect_to :sort => sort, :ratings => @selected_ratings and return
+      redirect_to :action => 'index', :ratings => @ratings, :order => @order 
     end
 
-    if params[:ratings] != session[:ratings] and @selected_ratings != {}
-      session[:sort] = sort
-      session[:ratings] = @selected_ratings
-      flash.keep
-      redirect_to :sort => sort, :ratings => @selected_ratings and return
-    end
-    @movies = Movie.find_all_by_rating(@selected_ratings.keys, ordering)
+    session[:ratings] = @ratings
+    session[:order] = @order
   end
 
   def new
