@@ -116,7 +116,7 @@ def hangman(secretWord):
         print '-------------'
         print 'You have %d guesses left.' % tries
         print 'Available letters: %s' % getAvailableLetters(guesses)
-        letter = raw_input('Please guess a letter: ')
+        letter = raw_input('Please guess a letter: ').lower()
         if letter in guesses:
             print 'Oops! You\'ve already guessed that letter: %s' % hint
         else:
