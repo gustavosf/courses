@@ -38,7 +38,7 @@ class Admin::ContentController < Admin::BaseController
   end
 
   def merge
-    Article.find_by_id(params[:article_id]).merge_with(params[:similar_article_id])
+    Article.find_by_id(params[:article_id]).merge_with(params[:merge_with])
     flash[:notice] = _("You successfully merged those two articles!")
     redirect_to("/admin/content")
   end

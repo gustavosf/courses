@@ -67,7 +67,8 @@ class Article < Content
     self.body += similar_article.body
     similar_article.comments.each do |comment|
       comment.article_id = self.id
-      self.comments << c
+      comment.save
+      # self.comments << c
     end
     similar_article.delete
     self.save
