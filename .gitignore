@@ -1,19 +1,7 @@
 *.sublime-*
-
-# Ignoring hottenpottatoes files that wasn't modified in homework-2
-edx/BerkeleyX/CS169.1x/homework-2/
-!edx/BerkeleyX/CS169.1x/homework-2/app/controllers/movies_controller.rb
-!edx/BerkeleyX/CS169.1x/homework-2/app/views/movies/index.html.haml
-!edx/BerkeleyX/CS169.1x/homework-2/app/assets/stylesheets/application.css
-!edx/BerkeleyX/CS169.1x/homework-2/app/models/movies.rb
-!edx/BerkeleyX/CS169.1x/homework-2/README.md
-
-# Ignoring hottenpottatoes files that wasn't modified in homework-3
-edx/BerkeleyX/CS169.1x/homework-3/
-!edx/BerkeleyX/CS169.1x/homework-3/fetures
-
-# Ignoring hottenpotatoes files that wasn't modified in homework-4
-edx/BerkeleyX/CS169.1x/homework-4/
-
-
 *.pyc
+
+edx/BerkeleyX/CS169.1x/homework-2/
+edx/BerkeleyX/CS169.1x/homework-3/
+edx/BerkeleyX/CS169.1x/homework-4/
+edx/BerkeleyX/CS169.2x/homework-1
