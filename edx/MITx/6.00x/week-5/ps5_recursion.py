@@ -26,18 +26,13 @@ def x_ian(x, word):
     Given a string x, returns True if all the letters in x are
     contained in word in the same order as they appear in x.
 
-    >>> x_ian('eric', 'meritocracy')
-    True
-    >>> x_ian('eric', 'cerium')
-    False
-    >>> x_ian('john', 'mahjong')
-    False
-
     x: a string
     word: a string
     returns: True if word is x_ian, False otherwise
     """
-    ###TODO.
+    if (x and not word): return False
+    if (not x): return True
+    return (x[0] in word) and (x_ian(x[1:], word[word.index(x[0])+1:]))
 
 #
 # Problem 5: Typewriter
@@ -63,4 +58,7 @@ if __name__ == '__main__':
     assert reverseString('some phrase') == 'esarhp emos'
     assert reverseString('a') == 'a'
     assert reverseString('') == ''
-
+    # tests for part 2
+    assert x_ian('eric', 'meritocracy') is True
+    assert x_ian('eric', 'cerium') is False
+    assert x_ian('john', 'mahjong') is False
