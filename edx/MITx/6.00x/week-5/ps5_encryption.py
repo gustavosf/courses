@@ -99,10 +99,10 @@ def buildCoder(shift):
     shift: 0 <= int < 26
     returns: dict
     """
-uc = string.ascii_uppercase
-lc = string.ascii_lowercase
-dictionary = lc[shift:] + lc[:shift] + uc[shift:] + uc[:shift]
-return dict(zip(lc+uc, dictionary))
+    uc = string.ascii_uppercase
+    lc = string.ascii_lowercase
+    dictionary = lc[shift:] + lc[:shift] + uc[shift:] + uc[:shift]
+    return dict(zip(lc+uc, dictionary))
 
 
 def applyCoder(text, coder):
@@ -113,8 +113,10 @@ def applyCoder(text, coder):
     coder: dict with mappings of characters to shifted characters
     returns: text after mapping coder chars to original text
     """
-    ### TODO.
-    return "Not yet implemented." # Remove this comment when you code the function
+    coded = ''
+    for char in text:
+        coded += coder[char] if char in coder else char
+    return coded
 
 def applyShift(text, shift):
     """
