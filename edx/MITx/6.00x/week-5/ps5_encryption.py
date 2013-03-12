@@ -141,8 +141,18 @@ def findBestShift(wordList, text):
     text: string
     returns: 0 <= int < 26
     """
-    ### TODO
-    return "Not yet implemented." # Remove this comment when you code the function
+    import re
+    best_shift = best_score = 0
+    for shift in range(26):
+        score = 0
+        phrase = applyShift(text, shift)
+        for word in re.findall(r"[\w]+", phrase):
+            if (isWord(wordList, word)):
+                score += 1
+        if (score > best_score):
+            best_score, best_shift = score, shift
+    return best_shift
+
 
 def decryptStory():
     """
