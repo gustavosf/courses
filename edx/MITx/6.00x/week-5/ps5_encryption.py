@@ -163,8 +163,10 @@ def decryptStory():
 
     returns: string - story in plain text
     """
-    ### TODO.
-    return "Not yet implemented." # Remove this comment when you code the function
+    wordList = loadWords()
+    story = getStoryString()
+    shift = findBestShift(wordList, story)
+    return applyShift(story, shift)
 
 #
 # Build data structures used for entire session and run encryption
@@ -177,4 +179,4 @@ if __name__ == '__main__':
     bestShift = findBestShift(wordList, s)
     assert applyShift(s, bestShift) == 'Hello, world!'
     # To test decryptStory, comment the above four lines and uncomment this line:
-    #    decryptStory()
+    print decryptStory()
