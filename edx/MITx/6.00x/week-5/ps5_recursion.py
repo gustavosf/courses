@@ -48,17 +48,22 @@ def insertNewlines(text, lineLength):
         the next word.
     returns: a string, with newline characters inserted appropriately.
     """
-    ### TODO.
+    i = text[lineLength-1:].find(' ')
+    if i < 0: return text
+    return text[:lineLength+i-1] + '\n' + insertNewlines(text[i+lineLength:], lineLength)
 
 
 
 if __name__ == '__main__':
-    # tests for part 1
+    # tests for part 1 - reverse string
     assert reverseString('string') == 'gnirts'
     assert reverseString('some phrase') == 'esarhp emos'
     assert reverseString('a') == 'a'
     assert reverseString('') == ''
-    # tests for part 2
+    # tests for part 2 - x-ian
     assert x_ian('eric', 'meritocracy') is True
     assert x_ian('eric', 'cerium') is False
     assert x_ian('john', 'mahjong') is False
+    #tests for part 3 - typewriter
+    assert insertNewlines('While I expect new intellectual adventures ahead, nothing will compare to the exhilaration of the world-changing accomplishments that we produced together.', 15) == "While I expect\nnew intellectual\nadventures ahead,\nnothing will compare\nto the exhilaration\nof the world-changing\naccomplishments\nthat we produced\ntogether."
+    assert insertNewlines('Nuh-uh! We let users vote on comments and display them by number of votes. Everyone knows that makes it impossible for a few persistent voices to dominate the discussion.', 20) == "Nuh-uh! We let users\nvote on comments and\ndisplay them by number\nof votes. Everyone knows\nthat makes it impossible\nfor a few persistent\nvoices to dominate the\ndiscussion."
