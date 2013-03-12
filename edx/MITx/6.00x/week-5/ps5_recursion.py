@@ -11,11 +11,12 @@ def reverseString(aStr):
     For example, if the string is 'abc', the function returns 'cba'.
     The only string operations you are allowed to use are indexing,
     slicing, and concatenation.
-    
+
     aStr: a string
     returns: a reversed string
     """
-    ### TODO.
+    if not aStr: return ''
+    return aStr[-1] + (reverseString(aStr[:-1]) if len(aStr) > 1 else '')
 
 #
 # Problem 4: X-ian
@@ -31,7 +32,7 @@ def x_ian(x, word):
     False
     >>> x_ian('john', 'mahjong')
     False
-    
+
     x: a string
     word: a string
     returns: True if word is x_ian, False otherwise
@@ -50,6 +51,16 @@ def insertNewlines(text, lineLength):
     text: a string containing the text to wrap.
     line_length: the number of characters to include on a line before wrapping
         the next word.
-    returns: a string, with newline characters inserted appropriately. 
+    returns: a string, with newline characters inserted appropriately.
     """
     ### TODO.
+
+
+
+if __name__ == '__main__':
+    # tests for part 1
+    assert reverseString('string') == 'gnirts'
+    assert reverseString('some phrase') == 'esarhp emos'
+    assert reverseString('a') == 'a'
+    assert reverseString('') == ''
+
