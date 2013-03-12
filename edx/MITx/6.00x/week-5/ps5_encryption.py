@@ -129,9 +129,7 @@ def applyShift(text, shift):
     shift: amount to shift the text (0 <= int < 26)
     returns: text after being shifted by specified amount.
     """
-    ### TODO.
-    ### HINT: This is a wrapper function.
-    return "Not yet implemented." # Remove this comment when you code the function
+    return applyCoder(text, buildCoder(shift))
 
 #
 # Problem 2: Decryption
