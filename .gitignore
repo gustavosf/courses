@@ -1,7 +1,7 @@
 *.sublime-*
 *.pyc
 
-edx/BerkeleyX/CS169.1x/homework-2/
-edx/BerkeleyX/CS169.1x/homework-3/
-edx/BerkeleyX/CS169.1x/homework-4/
-edx/BerkeleyX/CS169.2x/homework-1
+edx/BerkeleyX/CS169.1x/homework-2
+edx/BerkeleyX/CS169.1x/homework-3
+edx/BerkeleyX/CS169.1x/homework-4
+edx/BerkeleyX/CS169.2x/homework-*
