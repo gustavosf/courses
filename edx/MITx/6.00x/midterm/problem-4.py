@@ -8,16 +8,11 @@ def jumpAndBackpedal(isMyNumber):
 
     returns: integer, the secret number
     '''
-    guess = 1
-    if isMyNumber(guess) == 1:
-        return guess
-    foundNumber = False
-    while not foundNumber:
+    guess = 0
+    while True:
         sign = isMyNumber(guess)
-        if sign == -1:
-            guess *= 2
-        else:
-            guess -= 1
+        if sign == 0: break
+        guess -= sign
     return guess
 
 def isMyNumber(x):
@@ -37,10 +32,10 @@ assert isMyNumber(-25) is -1
 
 # testing implementation of jumpAndBackpedal
 secret_number = 15
-assert jumpAndBackpedal(isMyNumber) is 15
+assert jumpAndBackpedal(isMyNumber) == 15
 secret_number = -17
-assert jumpAndBackpedal(isMyNumber) is -17
+assert jumpAndBackpedal(isMyNumber) == -17
 secret_number = 0
-assert jumpAndBackpedal(isMyNumber) is 0
+assert jumpAndBackpedal(isMyNumber) == 0
 secret_number = 9999
-assert jumpAndBackpedal(isMyNumber) is 9999
+assert jumpAndBackpedal(isMyNumber) == 9999
