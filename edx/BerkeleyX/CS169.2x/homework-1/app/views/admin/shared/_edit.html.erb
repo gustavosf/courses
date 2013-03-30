@@ -1,0 +1,15 @@
+<% className = form_action.delete(:class) %>
+<%= form_tag(form_action, :id => "#{form_type}_form", :enctype => "multipart/form-data", :class => className) do %>
+
+  <%= render :partial => "form" %>
+
+<% end %>
+
+<% if current_user.admin? %>
+  <h4><%= _("Merge Articles") %></h4>
+  <%= form_tag '/admin/content/merge' do %>
+    Article ID <%= text_field_tag 'merge_with' %>
+    <%= hidden_field_tag 'article_id', @article.id %>
+    <%= submit_tag 'Merge' %>
+  <% end %>
+<% end %>
