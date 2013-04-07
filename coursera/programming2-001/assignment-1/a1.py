@@ -9,7 +9,7 @@ def num_buses(n):
     >>> num_buses(75)
     2
     """
-    return (n / 50) + (1 if 50 % n else 0)
+    return (n / 50) + (1 if n % 50 else 0)
 
 
 def stock_price_summary(price_changes):
