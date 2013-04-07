@@ -9,6 +9,7 @@ def num_buses(n):
     >>> num_buses(75)
     2
     """
+    return (n / 50) + (1 if 50 % n else 0)
 
 
 def stock_price_summary(price_changes):
@@ -21,6 +22,7 @@ def stock_price_summary(price_changes):
     >>> stock_price_summary([0.01, 0.03, -0.02, -0.14, 0, 0, 0.10, -0.01])
     (0.14, -0.17)
     """
+    return (sum([x for x in price_changes if x > 0]), sum([x for x in price_changes if x < 0]))
 
 
 def swap_k(L, k):
@@ -35,7 +37,9 @@ def swap_k(L, k):
     >>> nums
     [5, 6, 3, 4, 1, 2]
     """
-
+    l = L[-k:] + L[k:-k] + L[:k]
+    del L[:]
+    L.extend(l)
 
 if __name__ == '__main__':
     import doctest
