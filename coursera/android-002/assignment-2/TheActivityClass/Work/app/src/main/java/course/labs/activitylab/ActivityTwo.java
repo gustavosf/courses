@@ -74,10 +74,10 @@ public class ActivityTwo extends Activity {
 			// TODO: DONE
 			// Restore value of counters from saved state
 			// Only need 4 lines of code, one for every count variable
-            savedInstanceState.getInt("mStart", mStart);
-            savedInstanceState.getInt("mRestart", mRestart);
-            savedInstanceState.getInt("mResume", mResume);
-            savedInstanceState.getInt("mCreate", mCreate);
+            mStart = savedInstanceState.getInt("mStart");
+            mRestart = savedInstanceState.getInt("mRestart");
+            mResume = savedInstanceState.getInt("mResume");
+            mCreate = savedInstanceState.getInt("mCreate");
 		}
 
 		// Emit LogCat message
