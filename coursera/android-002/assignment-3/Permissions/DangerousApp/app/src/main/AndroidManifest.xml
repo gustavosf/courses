@@ -27,7 +27,8 @@
 
         <activity
             android:name=".DangerousActivity"
-            android:label="@string/app_name" >
+            android:label="@string/app_name"
+            android:permission="course.labs.permissions.DANGEROUS_ACTIVITY_PERM" >
 
             <!--
                  TODO - add additional intent filter info so that this Activity
