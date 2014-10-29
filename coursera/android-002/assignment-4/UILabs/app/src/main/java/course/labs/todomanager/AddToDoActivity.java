@@ -108,7 +108,9 @@ public class AddToDoActivity extends Activity {
 
 				// DONE - Reset data to default values
                 setDefaultDateTime();
-
+                mStatusRadioGroup.check(R.id.statusNotDone);
+                mPriorityRadioGroup.check(R.id.medPriority);
+                mTitleText.setText("");
 			}
 		});
 

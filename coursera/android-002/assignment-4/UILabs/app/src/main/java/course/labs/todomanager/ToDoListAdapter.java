@@ -90,11 +90,11 @@ public class ToDoListAdapter extends BaseAdapter {
 
 		// DONE - Inflate the View for this ToDoItem
 		// from todo_item.xml
-		RelativeLayout itemLayout = (RelativeLayout)convertView;
+		// RelativeLayout itemLayout = (RelativeLayout)convertView;
 
-        if (itemLayout == null) {
+        if (convertView == null) {
             LayoutInflater li = (LayoutInflater) mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            itemLayout = (RelativeLayout) li.inflate(R.layout.todo_item, parent);
+            convertView = li.inflate(R.layout.todo_item, null);
         }
 
 		// TODO? - Fill in specific ToDoItem data
@@ -103,11 +103,11 @@ public class ToDoListAdapter extends BaseAdapter {
 		// in the layout file
 
 		// DONE - Display Title in TextView
-		final TextView titleView = (TextView)itemLayout.findViewById(R.id.titleView);
+		final TextView titleView = (TextView)convertView.findViewById(R.id.titleView);
         titleView.setText(toDoItem.getTitle());
 
 		// DONE - Set up Status CheckBox
-		final CheckBox statusView = (CheckBox)itemLayout.findViewById(R.id.statusCheckBox);
+		final CheckBox statusView = (CheckBox)convertView.findViewById(R.id.statusCheckBox);
         statusView.setChecked(toDoItem.getStatus() == ToDoItem.Status.DONE);
 
 		statusView.setOnCheckedChangeListener(new OnCheckedChangeListener() {
@@ -123,17 +123,17 @@ public class ToDoListAdapter extends BaseAdapter {
 		});
 
 		// DONE - Display Priority in a TextView
-		final TextView priorityView = (TextView)itemLayout.findViewById(R.id.priorityView);
+		final TextView priorityView = (TextView)convertView.findViewById(R.id.priorityView);
         priorityView.setText(toDoItem.getPriority().toString());
 
 		// DONE - Display Time and Date.
 		// Hint - use ToDoItem.FORMAT.format(toDoItem.getDate()) to get date and
 		// time String
-		final TextView dateView = (TextView)itemLayout.findViewById(R.id.dateView);
+		final TextView dateView = (TextView)convertView.findViewById(R.id.dateView);
         dateView.setText(toDoItem.FORMAT.format(toDoItem.getDate()));
 
 		// Return the View you just created
-		return itemLayout;
+		return convertView;
 
 	}
 }

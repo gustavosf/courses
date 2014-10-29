@@ -83,7 +83,7 @@ public class ToDoManagerActivity extends ListActivity {
 		// and then add it to the adapter
 
         if (requestCode == 1 && resultCode == RESULT_OK) {
-            mAdapter.add(data);
+            mAdapter.add(new ToDoItem(data));
         }
 
 	}
